@@ -9,40 +9,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
-
 <script src="https://d3plus.org/js/topojson.js"></script>
 <script src="https://d3plus.org/js/d3plus.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+   <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedFooter").load("footer.html"); 
+      $("#includedNavbar").load("navbar.html"); 
+    });
+    </script> 
+</head>
 
 <body>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">FI UNLP</a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="#general" class="w3-bar-item w3-button">GENERAL</a>
-      <a href="#about" class="w3-bar-item w3-button">SOBRE</a>
-      <a href="#slums" class="w3-bar-item w3-button"><i class="fa fa-user"></i> VILLAS</a>
-      <a href="mapa_mundi.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> MAPA</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACTO</a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#general" onclick="w3_close()" class="w3-bar-item w3-button">GENERAL</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">SOBRE</a>
-  <a href="#slums" onclick="w3_close()" class="w3-bar-item w3-button">VILLAS</a>
-  <a href="#viz" onclick="w3_close()" class="w3-bar-item w3-button">MAPA</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACTO</a>
-</nav>
-
+<div id="includedNavbar"></div>
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img class="w3-image" src="images/data.png" alt="Architecture" width="1500" height="800">
@@ -51,7 +33,6 @@
     class="w3-padding w3-black w3-opacity-min">Pobreza Mundial</span></h1>
   </div>
 </header>
-
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
@@ -114,20 +95,6 @@
     <p>Representacion de la cantidad total de personas, por cada pais, que viven en villas. Los porcentajes que se ven reflejados en el grafico fueron tomados del Banco Mundial.</p>
   </div>
 
-  <!-- MAPA MUNDI Section 
-  <div class="w3-container w3-padding-16" id="viz" style="width:1301px; height: 521px">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Mapa mundial</h3>
-    <script src="scripts/mapa_mundi.js"></script>
-  </div>
-  
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-  </div>
--->
-
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
@@ -168,51 +135,6 @@
     </div>
   </div>
 
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contactanos</h3>
-    <p>Hacenos saber si aprobamos y obtuvimos la promocion</p>
-    <form action="/action_page.php" target="_blank">
-      <input class="w3-input" type="text" placeholder="Nombre" required name="Name">
-      <input class="w3-input w3-section" type="text" placeholder="Email" required name="Email">
-      <input class="w3-input w3-section" type="text" placeholder="Motivo" required name="Subject">
-      <input class="w3-input w3-section" type="text" placeholder="Comentario" required name="Comment">
-      <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> ENVIAR
-      </button>
-    </form>
-  </div>
-  
-<!-- End page content -->
-</div>
-
-<!-- Google Map -->
-<div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Itt</a></p>
-</footer>
-
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(-34.899226, -57.9398498);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuiZU-MUns7KUb-uZCrtugFU_Y7guVVTo&callback=myMap"></script>
-
+ <div id="includedFooter"></div>
 </body>
 </html>
