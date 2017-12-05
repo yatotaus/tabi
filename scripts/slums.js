@@ -50,4 +50,3 @@ d3.csv("csv/mundo-slum.csv", function(d) {
   node.append("title")
       .text(function(d) { return d.id + "\n" + format(d.value); });
 });
-console.log("Salgo de slums");
