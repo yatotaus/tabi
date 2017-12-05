@@ -1,14 +1,13 @@
-var svg = d3.select("#slums"),
-    width2 = +svg.attr("width"),
-    height2 = +svg.attr("height");
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
 
 var format = d3.format(",d");
-
 
 var color = d3.scaleOrdinal(d3.schemeCategory20c);
 
 var pack = d3.pack()
-    .size([width2, height2])
+    .size([width, height])
     .padding(2.3);
 
 d3.csv("csv/mundo-slum.csv", function(d) {

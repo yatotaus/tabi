@@ -17,7 +17,7 @@
     let x = d3.scaleLinear().rangeRound([0, width]),
         y = d3.scaleBand().rangeRound([height, 0]).padding(0.2);
     //load data
-    d3.csv("data.csv", function(d){
+    d3.csv("csv/data.csv", function(d){
         d.percentExpenditure = +d.percentExpenditure;
         return d;
     }, function (error, data) {
