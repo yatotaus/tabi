@@ -15,13 +15,18 @@
 <script src="https://d3plus.org/js/d3.js"></script>
 <script src="https://d3plus.org/js/d3plus.js"></script>
 
+
+
+<script src="scripts/datamaps.world.min.js"></script>
+
+
 <head>
   <script> 
     $(function(){
       $("#includedFooter").load("footer.html"); 
       $("#includeVideo").load("video.html");
       $("#includedNavbar").load("navbar.html"); 
-      $("#includeSlumns").load("slumsBubble.html"); 
+      //$("#includeSlumns").load("slumsBubble.html"); 
       $("#map").load("mapa_mundi_2.html"); 
       $("#aboutSection").load("aboutSection.html"); 
       $("#contact").load("contactSection.html"); 
@@ -42,8 +47,11 @@
     </header>
     <!-- Page content -->
     <div class="w3-content w3-padding" style="max-width:1564px">
+
       <div id="includeVideo"></div>
       <div id="includeSlumns"></div>
+      <iframe src="educacion.html" width="100%" height="550px" style="max-width:1564px"></iframe>
+      <iframe src="slumsBubble.html" width="100%" height="700px" style="max-width:1564px"></iframe>
       <div id="map"></div>
       <div id="aboutSection"></div>
       <div id="contact"></div>
