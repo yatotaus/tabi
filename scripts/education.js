@@ -1,4 +1,3 @@
-    console.log("Estoy en education");
     let svg2 = d3.select("#education"),
         margin = {top: 50, right: 50, bottom: 40, left: 80},
         width = svg2.attr("width") - margin.left - margin.right,
@@ -11,7 +10,7 @@
         y = d3.scaleBand().rangeRound([height, 0]).padding(0.2);
 
     //load data
-    d3.csv("data.csv", function(d){
+    d3.csv("csv/data.csv", function(d){
         d.percentExpenditure = +d.percentExpenditure;
         return d;
     }, function (error, data) {
