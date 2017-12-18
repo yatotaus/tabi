@@ -20,7 +20,7 @@ var sample_data = [
 var visualization = d3plus.viz()
   .container("#viz")        // container DIV to hold the visualization
   .data(sample_data)        
-  .coords("http://d3plus.org/topojson/countries.json") // pass topojson coordinates
+  .coords("http://www.d3plus.org/topojson/countries.json") // pass topojson coordinates
   .type("geo_map")          // visualization type
   .id("country")            // key for which our data is unique on
   .text("name")             
